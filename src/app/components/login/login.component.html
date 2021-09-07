@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="container">
+  <div class="card-body">
+    <form class="form-login" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+      <h1 class="login">Please sign in</h1>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Email address"
+          name="email"
+          ngModel
+        />
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          name="password"
+          ngModel
+        />
+      </div>
+
+      <div class="login-btn"></div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    </form>
+  </div>
+</div>

@@ -1,9 +1,21 @@
-<p>watch-list works!</p>
+<div class="movies">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rank</th>
+        <th>Year</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
 
-
-<!-- <div class="movies" *ngFor="let movie of movies">
-    <h1>{{movie.name}}</h1>
-    <p>
-        <span>{{movie.year}} $ - {{movie.type}} </span>
-    </p>
-</div> -->
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{movie.name}</td>
+        <td>{{movie.rank}</td>
+        <td>{{movie.year}</td>
+        <td>{{movie.rating}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -17,6 +17,7 @@ import { ChildGuard } from './guards/child.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { FormsModule} from '@angular/forms';
 
 
 
@@ -42,6 +43,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     RoutingModule,
     BrowserModule,
     NgbModule,
+    FormsModule,
+   
     BrowserAnimationsModule
     
   ],
