@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-body">
-    <form class="form-login" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+    <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit()">
       <h1 class="login">Please sign in</h1>
 
       <div class="form-floating">
@@ -9,8 +9,10 @@
           class="form-control"
           id="floatingInput"
           placeholder="Email address"
-          name="email"
-          ngModel
+          name="username"
+          required
+          email
+          [(ngModel)]="authBody.username"
         />
       </div>
       <div class="form-floating">
@@ -20,12 +22,20 @@
           id="floatingPassword"
           placeholder="Password"
           name="password"
-          ngModel
+          required
+          minlength="8"
+          [(ngModel)]="authBody.password"
         />
       </div>
 
       <div class="login-btn"></div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <button
+        class="w-100 btn btn-lg btn-primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
     </form>
   </div>
 </div>

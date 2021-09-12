@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthModel } from 'src/app/models/auth.models';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,13 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  authBody = new AuthModel();
+  ngOnInit(): void {
+    this.authBody.username = 'test@test.com';
+    this.authBody.password = 'test1234';
+  }
 
-
-onSubmit(loginForm: NgForm){
-console.log(loginForm.value);
+  submit() {
+    console.log('test');
+  }
 }
-}
-
