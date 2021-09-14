@@ -1,30 +1,31 @@
-<div class="container">
+<div class="card">
   <div class="card-body">
-    <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit()">
-      <h1 class="login">Please sign in</h1>
-
+    <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+      <h1 class="login">Please login</h1>
+ 
       <div class="form-floating">
+       
         <input
-          type="text"
+          type="email"
           class="form-control"
-          id="floatingInput"
-          placeholder="Email address"
+          id="inputEmail"
           name="username"
-          required
-          email
-          [(ngModel)]="authBody.username"
+          placeholder="Email address"
+          required autofocus
+          ngModel
         />
       </div>
       <div class="form-floating">
+
         <input
           type="password"
           class="form-control"
-          id="floatingPassword"
+          id="imputPassword"
+          name="password" 
           placeholder="Password"
-          name="password"
           required
           minlength="8"
-          [(ngModel)]="authBody.password"
+          ngModel
         />
       </div>
 
