@@ -2,41 +2,52 @@
   <div class="card-body">
     <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
       <h1 class="login">Please login</h1>
- 
+
       <div class="form-floating">
-       
         <input
           type="email"
           class="form-control"
           id="inputEmail"
           name="username"
+          pattern=".+\.com"
           placeholder="Email address"
-          required autofocus
+          required
           ngModel
         />
       </div>
       <div class="form-floating">
-
         <input
           type="password"
           class="form-control"
           id="imputPassword"
-          name="password" 
+          name="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           placeholder="Password"
           required
-          minlength="8"
           ngModel
         />
       </div>
 
-      <div class="login-btn"></div>
-      <button
-        class="w-100 btn btn-lg btn-primary"
-        type="submit"
-        [disabled]="loginForm.invalid"
-      >
+      <div class="login-btn">
+        <button
+          class="w-100 btn btn-lg btn-primary"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+        <!-- <button 
+      type="button" 
+        class="w-100 btn btn-lg btn-primary" 
+        (click)="submit(loginForm)"  [disabled]="loginForm.invalid"
+        
+        >
+      
         Login
-      </button>
+      </button> -->
+      </div>
     </form>
   </div>
 </div>
+<!-- <router-outlet></router-outlet> -->
+<!-- <app-navbar></app-navbar> -->

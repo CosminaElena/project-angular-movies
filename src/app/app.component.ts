@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +9,8 @@ import { Component, NgModule } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-angular-movies';
+
+  
 }
 
 

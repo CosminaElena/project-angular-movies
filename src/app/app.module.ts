@@ -18,7 +18,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { FormsModule} from '@angular/forms';
-import { AuthenticationComponent } from './service/authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -52,13 +51,13 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+   
     BrowserAnimationsModule
     
   ],
   providers: [
     ParentGuard,
-    ChildGuard,
-    AuthenticationComponent
+    ChildGuard
   ],
   bootstrap: [AppComponent]
 })
