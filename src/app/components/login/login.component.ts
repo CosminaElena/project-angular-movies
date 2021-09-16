@@ -11,6 +11,9 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  admin: any;
+  user: any;
+  loginForm: any;
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
@@ -20,26 +23,30 @@ export class LoginComponent implements OnInit {
 
   submit(loginForm: NgForm) {
     console.log(loginForm.value);
-    // console.log('Submit works!');
+
     const signinModel = new SigninModel(
       loginForm.value.username,
       loginForm.value.password
     );
+
     let user = this.authenticationService.authenticate(signinModel);
-    if (user = true) {
+    if (user === true) {
+      this.router.navigate(['home']);
       console.log('Login Successful');
     } else {
       console.log('Loggin not Successful');
     }
-    
-    this.router.navigate(['home']);
 
 
   }
 
   public isAuth() {
-
     return this.authenticationService.isAuthenticated;
-
   }
+
+
+
 }
+
+
+
