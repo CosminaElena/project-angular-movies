@@ -20,18 +20,28 @@ export class LoginComponent implements OnInit {
 
   submit(loginForm: NgForm) {
     console.log(loginForm.value);
-    console.log('Submit works!');
+    // console.log('Submit works!');
     const signinModel = new SigninModel(
       loginForm.value.username,
       loginForm.value.password
     );
-    this.authenticationService.authenticate(signinModel);
+    const user = this.authenticationService.authenticate(signinModel);
+    if (user) {
+      console.log('Login Successful');
+    } else {
+      console.log('Loggin not Successful');
+    }
+    
     this.router.navigate(['home']);
+
+
+
+
   }
 
-  // public isAuth() {
+  public isAuth() {
 
-  //   return this.authenticationService.isAuthenticated;
+    return this.authenticationService.isAuthenticated;
 
-  // }
+  }
 }

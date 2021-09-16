@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { SigninModel } from 'src/app/models/signin.models';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root',
 })
 export class AuthenticationService {
-  testUser = new SigninModel('test@email.com', 'Test1234');
+  private readonly testUser = new SigninModel('test@email.com', 'Test1234');
   
   isAuthenticated = false;
 

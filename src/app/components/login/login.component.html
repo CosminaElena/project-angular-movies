@@ -1,9 +1,10 @@
 <div class="card">
   <div class="card-body">
-    <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+ 
       <h1 class="login">Please login</h1>
-
+      <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
       <div class="form-floating">
+        <!-- <i class="material-icons prefix">account_circle</i> -->
         <input
           type="email"
           class="form-control"
@@ -16,6 +17,7 @@
         />
       </div>
       <div class="form-floating">
+        <!-- <i class="material-icons prefix"></i> -->
         <input
           type="password"
           class="form-control"
@@ -32,7 +34,7 @@
         <button
           class="w-100 btn btn-lg btn-primary"
           type="submit"
-          [disabled]="loginForm.invalid"
+          [disabled]="!loginForm.valid"
         >
           Login
         </button>
@@ -49,5 +51,3 @@
     </form>
   </div>
 </div>
-<!-- <router-outlet></router-outlet> -->
-<!-- <app-navbar></app-navbar> -->
