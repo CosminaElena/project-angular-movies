@@ -25,16 +25,14 @@ export class LoginComponent implements OnInit {
       loginForm.value.username,
       loginForm.value.password
     );
-    const user = this.authenticationService.authenticate(signinModel);
-    if (user) {
+    let user = this.authenticationService.authenticate(signinModel);
+    if (user = true) {
       console.log('Login Successful');
     } else {
       console.log('Loggin not Successful');
     }
     
     this.router.navigate(['home']);
-
-
 
 
   }
