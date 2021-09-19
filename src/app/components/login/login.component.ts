@@ -1,9 +1,8 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NavigationStart, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { SigninModel } from 'src/app/models/signin.models';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +13,16 @@ export class LoginComponent implements OnInit {
   admin: any;
   user: any;
   loginForm: any;
+  loggedinUser!: string;
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.user = localStorage.getItem('username');
+    // console.log(this.user);
+  }
 
   submit(loginForm: NgForm) {
     console.log(loginForm.value);
@@ -29,24 +32,17 @@ export class LoginComponent implements OnInit {
       loginForm.value.password
     );
 
-    let user = this.authenticationService.authenticate(signinModel);
-    if (user === true) {
+    this.user = this.authenticationService.authenticate(signinModel);
+    localStorage.setItem('username', signinModel.getUser());
+    if (this.user === true) {
       this.router.navigate(['home']);
       console.log('Login Successful');
     } else {
       console.log('Loggin not Successful');
     }
-
-
   }
 
   public isAuth() {
     return this.authenticationService.isAuthenticated;
   }
-
-
-
 }
-
-
-

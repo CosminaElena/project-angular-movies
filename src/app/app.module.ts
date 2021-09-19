@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './components/article/article.component';
 import { BlogComponent } from './components/blog/blog.component';
@@ -15,19 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParentGuard } from './guards/parent.guard';
 import { ChildGuard } from './guards/child.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
-
-
-
-
-
+import { AuthenticationService } from './service/authentication/authentication.service';
 
 @NgModule({
   declarations: [
@@ -40,10 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     NewReleasesComponent,
     ArticleComponent,
     HomeComponent,
-    BlogComponent, 
-   
-    
-
+    BlogComponent,
   ],
   imports: [
     RoutingModule,
@@ -53,13 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
 
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
   ],
-  providers: [
-    ParentGuard,
-    ChildGuard
-  ],
-  bootstrap: [AppComponent]
+  providers: [ParentGuard, ChildGuard, AuthenticationService], 
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

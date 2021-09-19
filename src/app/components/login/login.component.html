@@ -1,10 +1,10 @@
+ 
+
 <div class="card">
   <div class="card-body">
- 
-      <h1 class="login">Please login</h1>
-      <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+    <h1 class="login">Please login</h1>
+    <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
       <div class="form-floating">
-     
         <input
           type="email"
           class="form-control"
@@ -17,7 +17,6 @@
         />
       </div>
       <div class="form-floating">
-
         <input
           type="password"
           class="form-control"
@@ -27,7 +26,7 @@
           placeholder="Password"
           required
           ngModel
-        />
+          /> 
       </div>
 
       <div class="login-btn">
@@ -38,15 +37,6 @@
         >
           Login
         </button>
-        <!-- <button 
-      type="button" 
-        class="w-100 btn btn-lg btn-primary" 
-        (click)="submit(loginForm)"  [disabled]="loginForm.invalid"
-        
-        >
-      
-        Login
-      </button> -->
       </div>
     </form>
   </div>

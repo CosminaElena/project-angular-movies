@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
@@ -7,9 +8,24 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(public authenticationService: AuthenticationService) {}
+  loggedinUser: any;
+  constructor(
+    public authenticationService: AuthenticationService,
+    private router: Router
+  ) {}
 
   public isAuth() {
     return this.authenticationService.isAuthenticated;
+  }
+
+  loggedin() {
+    // return localStorage.getItem('username');
+    this.loggedinUser = localStorage.getItem('username');
+    return this.loggedinUser;
+  }
+
+  logout() {
+    localStorage.removeItem('username');
+    this.router.navigate(['login']);
   }
 }

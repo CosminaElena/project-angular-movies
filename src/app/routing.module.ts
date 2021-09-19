@@ -26,8 +26,7 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', component: MoviesComponent },
       { path: 'watch-list', component: WatchListComponent },
-      {path: ':movieId', component: MovieDetailsComponent},
-      
+      { path: ':movieId', component: MovieDetailsComponent },
     ],
   },
 
