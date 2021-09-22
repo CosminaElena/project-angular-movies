@@ -4,52 +4,37 @@ import { ArticleComponent } from './components/article/article.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { MoviesComponent } from './components/movies/movies.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
-import { WatchListComponent } from './components/watch-list/watch-list.component';
-import { ChildGuard } from './guards/child.guard';
-import { ParentGuard } from './guards/parent.guard';
+
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent, data: {title: 'Movies App - Login'}},
 
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, data: {title: 'Movies App - Home'}},
 
   { path: 'navbar', component: NavbarComponent },
 
   {
-    path: 'movies',
-    canActivate: [ParentGuard],
-    canActivateChild: [ChildGuard],
-    children: [
-      { path: '', pathMatch: 'full', component: MoviesComponent },
-      { path: 'watch-list', component: WatchListComponent },
-      { path: ':movieId', component: MovieDetailsComponent },
-    ],
-  },
-
-  {
     path: 'article',
-    component: ArticleComponent,
+    component: ArticleComponent, data: {title: 'Movies App - Article'}
   },
 
   {
     path: 'new-releases',
-    component: NewReleasesComponent,
+    component: NewReleasesComponent, data: {title: 'Movies App - New Releases'}
   },
 
   {
     path: 'blog',
-    component: BlogComponent,
+    component: BlogComponent, data: {title: 'Movies App - Blog'}
   },
 
   { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
 
   exports: [RouterModule],
 })

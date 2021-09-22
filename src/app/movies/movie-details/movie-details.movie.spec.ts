@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WatchListComponent } from './watch-list.component';
+import { MovieDetails } from './movie-details.movie';
 
-describe('WatchListComponent', () => {
-  let component: WatchListComponent;
-  let fixture: ComponentFixture<WatchListComponent>;
+describe('MovieDetails', () => {
+  let component: MovieDetails;
+  let fixture: ComponentFixture<MovieDetails>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WatchListComponent ]
+      declarations: [ MovieDetails ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WatchListComponent);
+    fixture = TestBed.createComponent(MovieDetails);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,3 +23,5 @@ describe('WatchListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

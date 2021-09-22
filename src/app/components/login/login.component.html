@@ -1,9 +1,9 @@
- 
-
 <div class="card">
   <div class="card-body">
     <h1 class="login">Please login</h1>
     <form class="form-login" #loginForm="ngForm" (ngSubmit)="submit(loginForm)">
+      <small class="text-danger">{{ msg }}</small>
+
       <div class="form-floating">
         <input
           type="email"
@@ -17,16 +17,18 @@
         />
       </div>
       <div class="form-floating">
-        <input
-          type="password"
-          class="form-control"
-          id="imputPassword"
-          name="password"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          placeholder="Password"
-          required
-          ngModel
-          /> 
+        <show-hide-password class="hide-option">
+          <input
+            type="password"
+            class="form-control"
+            id="imputPassword"
+            name="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            placeholder="Password"
+            required
+            ngModel
+          />
+        </show-hide-password>
       </div>
 
       <div class="login-btn">

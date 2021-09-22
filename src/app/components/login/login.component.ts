@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SigninModel } from 'src/app/models/signin.models';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +11,23 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  [x: string]: any;
   admin: any;
-  user: any;
+  // User: any;
   loginForm: any;
   loggedinUser!: string;
+  msg = '';
+
   constructor(
     private authenticationService: AuthenticationService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle('Movies App - Login');
+  }
 
   ngOnInit() {
-    this.user = localStorage.getItem('username');
+    // this.User = localStorage.getItem('username');
     // console.log(this.user);
   }
 
@@ -39,6 +46,7 @@ export class LoginComponent implements OnInit {
       console.log('Login Successful');
     } else {
       console.log('Loggin not Successful');
+      this.msg = 'Incorrect email or password';
     }
   }
 
