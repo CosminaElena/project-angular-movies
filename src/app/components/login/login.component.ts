@@ -13,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 export class LoginComponent implements OnInit {
   [x: string]: any;
   admin: any;
-  // User: any;
+
   loginForm: any;
   loggedinUser!: string;
   msg = '';
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     );
 
     this.user = this.authenticationService.authenticate(signinModel);
-    localStorage.setItem('username', signinModel.getUser());
+  
     if (this.user === true) {
       this.router.navigate(['home']);
       console.log('Login Successful');
@@ -50,7 +50,5 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public isAuth() {
-    return this.authenticationService.isAuthenticated;
-  }
+
 }

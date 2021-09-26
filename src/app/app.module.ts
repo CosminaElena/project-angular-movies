@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './components/article/article.component';
@@ -26,6 +26,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { AppRoutingModule } from './app-routing.modules';
+// import { MoviesModule } from './movies.module';
 
 @NgModule({
   declarations: [
@@ -51,11 +52,16 @@ import { AppRoutingModule } from './app-routing.modules';
     ReactiveFormsModule,
     ShowHidePasswordModule,
     RoutingModule,
+    Title,
+    // MoviesModule,
+   
 
-    BrowserAnimationsModule
   ],
 
-  providers: [ParentGuard, ChildGuard, AuthenticationService],
+  providers: [
+    ParentGuard, 
+    ChildGuard, 
+    AuthenticationService],
   bootstrap: [AppComponent],
   exports: [],
 })

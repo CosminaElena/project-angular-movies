@@ -7,46 +7,56 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
   loggedinUser: any;
-  // User: undefined;
+  loggedinAuth: any;
   constructor(
     public authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
-  ngOnInit(): any {
- 
-    this.loggedinUser = localStorage.getItem('username');
-    if(this.isAuth() ===true) {
-    this.loggedinUser;
-    return true;
+
+
+  ngOnInit(): any{
+    this.loggedinAuth = localStorage.getItem('isAuthenticated');
+    this.loggedinUser  = localStorage.getItem('username');
+   
+  }
+
+  public isAuth(): boolean {
+    if (this.loggedinAuth !== null && this.loggedinAuth !== "undefined" ) {
+      this.loggedinAuth = true;
+      return true;
     } else {
-      // this.loggedinUser = false;
+      this.loggedinAuth = false;
       return false;
-     
     }
   }
 
-  public isAuth() {
-    return this.authenticationService.isAuthenticated;
-  }
-
-  // loggedin() {
-
-  //   this.loggedinUser = localStorage.getItem('username');
-  //   return this.loggedinUser;
+  // ngOnInit(): boolean {
+  //   if (this.authenticationService.isAuthenticated) {
+  //     this.loggedinUser = localStorage.getItem('username');
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
   // }
 
-// getUser(){
-//   return localStorage.getItem('username');
-// }
+  // public isAuth(): boolean {
+  //   if (localStorage.getItem('isAuthenticated') !== null) {
+  //     // this.authenticationService.isAuthenticated;
+  //     return true;
+  //   } else {
+      
+  //     return false;
+  //   }
+  // }
+
+
 
   logout() {
     localStorage.removeItem('username');
+    localStorage.removeItem('isAuthenticated');
     this.router.navigate(['login']);
   }
-
 }
-
-
