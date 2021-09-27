@@ -24,35 +24,14 @@ export class NavbarComponent implements OnInit {
   }
 
   public isAuth(): boolean {
-    if (this.loggedinAuth !== null && this.loggedinAuth !== "undefined" ) {
-      this.loggedinAuth = true;
+    if (this.loggedinUser !== null && this.loggedinUser !== "undefined" ) {
+      this.loggedinAuth === true;
       return true;
     } else {
-      this.loggedinAuth = false;
+      this.loggedinAuth === false;
       return false;
     }
   }
-
-  // ngOnInit(): boolean {
-  //   if (this.authenticationService.isAuthenticated) {
-  //     this.loggedinUser = localStorage.getItem('username');
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
-  // public isAuth(): boolean {
-  //   if (localStorage.getItem('isAuthenticated') !== null) {
-  //     // this.authenticationService.isAuthenticated;
-  //     return true;
-  //   } else {
-      
-  //     return false;
-  //   }
-  // }
-
-
 
   logout() {
     localStorage.removeItem('username');

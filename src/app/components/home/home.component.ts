@@ -8,7 +8,9 @@ import {Title} from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private titleService: Title ) { 
+  constructor(
+    private titleService: Title
+     ) { 
     this.titleService.setTitle('Movies App - Home');
 
   }

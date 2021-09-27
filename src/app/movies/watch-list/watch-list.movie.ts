@@ -10,7 +10,9 @@ export class WatchList implements OnInit {
 
   // movies: any
 
-  constructor( private titleService: Title) { 
+  constructor( 
+    private titleService: Title
+    ) { 
     this.titleService.setTitle('Movies App - Watch-list');
     // this.movies=[
     //   {

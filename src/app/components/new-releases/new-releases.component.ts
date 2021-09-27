@@ -8,8 +8,11 @@ import {Title} from '@angular/platform-browser';
 })
 export class NewReleasesComponent implements OnInit {
 
-  constructor(private titleService: Title) {  
-    this.titleService.setTitle('Movies App - New releases');}
+  constructor(
+    private titleService: Title
+    ) {  
+    this.titleService.setTitle('Movies App - New releases');
+  }
 
   ngOnInit(): void {
   }
