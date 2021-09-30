@@ -1,22 +1,19 @@
+<div class="container-fluid">
+<div class="row" *ngIf="movies$ | async as movies">
+  <div class="col-sm-12 col-md-6  col-lg-3 col-xl-4" *ngFor="let movie of movies">
 
-<!-- <div class="movies">
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Rank</th>
-        <th>Year</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
+    <div class="card" style="width: 18rem;">
+      <img src="{{movie.image}}" class="card-img-top" alt="Movie img" width="300" height="400">
+      <div class="card-body">
+         <h5 class="card-title">{{movie.name}}</h5>
+       <p class="card-text">{{movie.description.slice(1, 60) + '...'}}</p>
+<!--     
+          <a   class="btn btn-primary" (click)="moreDetails()">More details</a> -->
+      </div>
+    </div>
 
-    <tbody>
-      <tr *ngFor="let movie of movies">
-        <td>{{movie.name}</td>
-        <td>{{movie.rank}</td>
-        <td>{{movie.year}</td>
-        <td>{{movie.rating}</td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
+
+ 
+  </div>
+</div>
+</div> 

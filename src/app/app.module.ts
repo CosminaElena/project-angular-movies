@@ -5,19 +5,16 @@ import { ArticleComponent } from './components/article/article.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-// import { Movies } from './movies/movies/movies.movie';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
-// import { WatchList } from './movies/watch-list/watch-list.movie';
 import { RoutingModule } from './routing.module';
 import { ParentGuard } from './guards/parent.guard';
 import { ChildGuard } from './guards/child.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { MovieDetails } from './movies/movie-details/movie-details.movie';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthenticationService } from './service/authentication/authentication.service';
+import { AuthenticationService } from './services/authentication/authentication.service';
 import {
   NgbPaginationModule,
   NgbAlertModule,
@@ -32,9 +29,6 @@ import { MoviesModule } from './movies.module'
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    // Movies,
-    // MovieDetails,
-    // WatchList,
     NewReleasesComponent,
     ArticleComponent,
     HomeComponent,
@@ -46,7 +40,6 @@ import { MoviesModule } from './movies.module'
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    // Title,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,

@@ -7,6 +7,7 @@ import { WatchList } from './movies/watch-list/watch-list.movie';
 // import { ChildGuard } from './guards/child.guard';
 import { AppRoutingModule } from './app-routing.modules'
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -20,6 +21,8 @@ import { BrowserModule } from '@angular/platform-browser';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        CommonModule,
+        
     
     ]
     

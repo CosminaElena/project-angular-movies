@@ -17,8 +17,10 @@ const routes: Routes = [
   canActivateChild: [ChildGuard],
   children: [
     { path: '', pathMatch: 'full', component: Movies },
+
     { path: 'watch-list', component: WatchList },
-    { path: ':movieId', component: MovieDetails },
+    { path: ':id', component: MovieDetails },
+   
   ],
 },
   ];

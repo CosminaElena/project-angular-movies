@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SigninModel } from 'src/app/models/signin.models';
-import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { Title } from '@angular/platform-browser';
 
 @Component({
