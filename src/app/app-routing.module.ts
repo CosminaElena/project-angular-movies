@@ -6,21 +6,22 @@ import { Movies } from './movies/movies/movies.movie';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
 
 const routes: Routes = [
 {
-  path: 'movies',
-  canActivate: [ParentGuard],
+  path: 'movie',
+  canActivate: [ParentGuard], 
   canActivateChild: [ChildGuard],
   children: [
-    { path: '', pathMatch: 'full', component: Movies },
+    { path: '', pathMatch: 'full', component: Movies, canActivate:[AuthGuard] },
 
-    { path: 'watch-list', component: WatchList },
-    { path: ':id', component: MovieDetails },
-   
+    { path: 'watch-list', component: WatchList, canActivate:[AuthGuard] },
+    { path: 'movie-details/:id', component: MovieDetails, canActivate:[AuthGuard] },
+    
   ],
 },
   ];

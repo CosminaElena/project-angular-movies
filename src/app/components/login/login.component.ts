@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SigninModel } from 'src/app/models/signin.models';
+import { SigninModel } from 'src/app/models/signin.model';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { Title } from '@angular/platform-browser';
 

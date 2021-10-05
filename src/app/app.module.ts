@@ -20,7 +20,7 @@ import {
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-import { AppRoutingModule } from './app-routing.modules';
+import { AppRoutingModule } from './app-routing.module';
 import { MoviesModule } from './movies.module'
 
 

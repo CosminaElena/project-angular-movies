@@ -7,8 +7,8 @@
       <div class="card-body">
          <h5 class="card-title">{{movie.name}}</h5>
        <p class="card-text">{{movie.description.slice(1, 60) + '...'}}</p>
-<!--     
-          <a   class="btn btn-primary" (click)="moreDetails()">More details</a> -->
+
+          <div class="btn btn-primary" (click)="navigateToDetails(movie.id)">More details</div>
       </div>
     </div>
 

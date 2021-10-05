@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { AuthGuard } from 'src/app/guards/auth.guard'
+
 
 @Component({
   selector: 'app-navbar',
@@ -14,13 +16,12 @@ export class NavbarComponent implements OnInit {
     public authenticationService: AuthenticationService,
     private router: Router
   ) {}
-
-
+  
 
   ngOnInit(): any{
     this.loggedinAuth = localStorage.getItem('isAuthenticated');
     this.loggedinUser  = localStorage.getItem('username');
-   
+
   }
 
   public isAuth(): boolean {
@@ -33,9 +34,11 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  logout() {
-    localStorage.removeItem('username');
-    localStorage.removeItem('isAuthenticated');
-    this.router.navigate(['login']);
-  }
+logout(){
+  localStorage.removeItem('username');
+  localStorage.removeItem('isAuthenticated');
+  this.router.navigate(['login']);
 }
+
+}
+

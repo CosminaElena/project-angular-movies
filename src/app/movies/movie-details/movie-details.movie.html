@@ -1,3 +1,53 @@
 
-<!-- <app-watch-list></app-watch-list> -->
-<!-- <h3>{{movie.id}}</h3> -->
+
+
+<div *ngIf="this.movie === undefined then ifBlock else elseBlock"></div> 
+
+<ng-template #ifBlock>
+    <h1> Doesn't works!</h1>
+</ng-template>
+<ng-template #elseBlock>
+        <div>
+        <img src="{{movie?.image}}">
+    <h1>{{movie?.name}} - {{movie?.year}}</h1>
+    <h2>{{movie?.genre}} - {{movie?.rating}}</h2>
+    <h2>{{movie?.description}}</h2>
+    </div>
+</ng-template>
+   
+
+   
+    <!-- <div>
+        <img src="{{movie?.image}}">
+    <h1>{{movie?.name}} - {{movie?.year}}</h1>
+    <h2>{{movie?.genre}} - {{movie?.rating}}</h2>
+    <h2>{{movie?.description}}</h2>
+    </div> -->
+
+
+
+
+<!-- <div *ngIf="moreDetails()" lass="card-text">
+    <a class="nav-link" >{{this.msg}}</a>
+    <div>
+        <img src="{{movie?.image}}">
+    <h1>{{movie?.name}} - {{movie?.year}}</h1>
+    <h2>{{movie?.genre}} - {{movie?.rating}}</h2>
+    <h2>{{movie?.description}}</h2>
+    </div>
+  </div>
+  <div *ngIf="!moreDetails()">
+    <a class="nav-link" >{{this.msg}}</a>
+
+  </div> -->
+
+
+  <!-- <div *ngIf="loadMovie()" class="card-text">
+    <a *ngIf="loadMovie()" class="nav-link" (click)="logout()">{{loggedinUser}}</a>
+  </div> -->
+
+
+
+
+<!-- <p>Works!</p>
+<p>doesnt work</p> -->

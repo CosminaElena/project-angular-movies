@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { SigninModel } from 'src/app/models/signin.models';
+import { Router } from '@angular/router';
+import { SigninModel } from 'src/app/models/signin.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor() {}
+  constructor(  
+    private router: Router) {}
  
   private readonly testUser = new SigninModel('test@mail.com', 'Test1234');
 
   isAuthenticated = false;
+  loggedinUser: any;
+  loggedinAuth: any;
 
   authenticate(signinModel: SigninModel): boolean {
     
@@ -37,4 +41,8 @@ export class AuthenticationService {
   private checkPass(password: string): boolean {
     return password === this.testUser.getPass();
   }
+
+
+
+
 }

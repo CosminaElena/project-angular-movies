@@ -24,7 +24,7 @@
         </li>
         <li class="nav-item dropdown">
           <a
-            [routerLink]="['/movies']"
+            [routerLink]="['/movie']"
             class="nav-link dropdown-toggle"
             id="navbarDropdown"
             role="button"
@@ -35,11 +35,11 @@
             Movies
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a [routerLink]="['/movies', 'watch-list']" class="dropdown-item"
+            <a [routerLink]="['/movie/watch-list']" class="dropdown-item"
               >Watch-list</a
             >
             <a
-              [routerLink]="['/movies', 'movie-details']"
+              [routerLink]="['/movie/movie-details/:id']"
               class="dropdown-item"
               href="#"
               >Details</a

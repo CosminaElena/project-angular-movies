@@ -5,7 +5,7 @@ import { MovieDetails } from './movies/movie-details/movie-details.movie';
 import { WatchList } from './movies/watch-list/watch-list.movie';
 // import { ParentGuard } from './guards/parent.guard';
 // import { ChildGuard } from './guards/child.guard';
-import { AppRoutingModule } from './app-routing.modules'
+import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
