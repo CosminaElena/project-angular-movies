@@ -7,28 +7,57 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ChildGuard } from './guards/child.guard';
+import { ParentGuard } from './guards/parent.guard';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent, data: {title: 'Movies App - Login'}},
+  { 
+    path: '', component: LoginComponent, 
+    data: {
+      title: 'Movies App - Login'
+    }
+  },
 
-  { path: 'home', component: HomeComponent, data: {title: 'Movies App - Home', canActivate:[AuthGuard]}},
+  { 
+    path: 'home', component: HomeComponent, 
+    canActivate:[AuthGuard, ParentGuard],
+    data: {
+      title: 'Movies App - Home', 
+      
+    }
+  },
 
-  { path: 'navbar', component: NavbarComponent, canActivate:[AuthGuard]},
-
-  {
-    path: 'article',
-    component: ArticleComponent, data: {title: 'Movies App - Article', canActivate:[AuthGuard]}
+  { 
+    path: 'navbar', component: NavbarComponent, 
+    canActivate:[AuthGuard]
   },
 
   {
-    path: 'new-releases',
-    component: NewReleasesComponent, data: {title: 'Movies App - New Releases', canActivate:[AuthGuard]}
+    path: 'article', component: ArticleComponent, 
+    canActivate:[AuthGuard],
+    data: 
+    {
+      title: 'Movies App - Article', 
+    }
   },
 
   {
-    path: 'blog',
-    component: BlogComponent, data: {title: 'Movies App - Blog', canActivate:[AuthGuard]}
+    path: 'new-releases', component: NewReleasesComponent, 
+    canActivate:[AuthGuard],
+    data: 
+    {
+      title: 'Movies App - New Releases', 
+    }
+  },
+
+  {
+    path: 'blog', component: BlogComponent, 
+    canActivate:[AuthGuard],
+    data: 
+    {
+      title: 'Movies App - Blog', 
+    }
   },
 
   { path: '**', redirectTo: '' },
@@ -36,7 +65,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
   exports: [RouterModule],
 })
 export class RoutingModule {}

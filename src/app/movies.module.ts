@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { Movies } from './movies/movies/movies.movie';
 import { MovieDetails } from './movies/movie-details/movie-details.movie';

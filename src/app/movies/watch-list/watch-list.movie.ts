@@ -32,18 +32,7 @@ export class WatchList implements OnInit {
 
   ngOnInit(): void {
     this.movies$ = this.movieService.getMovies();
-    // this.moreDetails();
   }
-
-  // moreDetails(){
-  //   if(this.loadMovie() !== false) {
-  //     console.log("Details");
-  //    return true 
-  //   } else{
-  //     console.log("ERROR");
-  //   return false
-  //   }
-  // }
 
 
   navigateToDetails(id: number){

@@ -1,0 +1,32 @@
+img {
+    max-width: 350px;
+    margin-top: 10px;
+    margin-left: 140px;
+    background-size: cover;
+    
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 100%;
+    font-weight: inherit;
+    font:"Helvetica Neue", Helvetica, Arial;
+    line-height: 28px;
+}
+
+h1 {
+    margin-top: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 35px;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* p {
+      text-indent: 5%;
+} */
+

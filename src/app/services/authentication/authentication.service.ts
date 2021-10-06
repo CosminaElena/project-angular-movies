@@ -43,6 +43,22 @@ export class AuthenticationService {
   }
 
 
+  public isAuth(): boolean {
+    this.loggedinAuth = localStorage.getItem('isAuthenticated');
+    this.loggedinUser  = localStorage.getItem('username');
+    if (this.loggedinUser !== null && this.loggedinUser !== "undefined" ) {
+      this.loggedinAuth === true;
+      return true;
+    } else {
+      this.loggedinAuth === false;
+      return false;
+    }
+  }
 
+  logout(){
+    localStorage.removeItem('username');
+    localStorage.removeItem('isAuthenticated');
+    this.router.navigate(['login']);
+  }
 
 }

@@ -6,6 +6,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
+import { AppRoutingModule } from './app-routing.module';
 import { RoutingModule } from './routing.module';
 import { ParentGuard } from './guards/parent.guard';
 import { ChildGuard } from './guards/child.guard';
@@ -20,8 +21,8 @@ import {
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-import { AppRoutingModule } from './app-routing.module';
 import { MoviesModule } from './movies.module'
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -45,16 +46,8 @@ import { MoviesModule } from './movies.module'
     ReactiveFormsModule,
     ShowHidePasswordModule,
     RoutingModule,
-    MoviesModule,
-  
-   
-
+    MoviesModule
   ],
-
-  providers: [
-    ParentGuard, 
-    ChildGuard, 
-    AuthenticationService],
   bootstrap: [AppComponent],
   exports: [],
 })

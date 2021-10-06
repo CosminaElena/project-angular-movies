@@ -18,27 +18,31 @@ export class NavbarComponent implements OnInit {
   ) {}
   
 
-  ngOnInit(): any{
-    this.loggedinAuth = localStorage.getItem('isAuthenticated');
-    this.loggedinUser  = localStorage.getItem('username');
-
+  ngOnInit(): any {
+    // this.loggedinAuth = localStorage.getItem('isAuthenticated');
+    // this.loggedinUser  = localStorage.getItem('username');
+    this.authenticationService.isAuth();
+    this.loggedinAuth = this.authenticationService.loggedinAuth;
+    this.loggedinUser = this.authenticationService.loggedinUser;
   }
 
-  public isAuth(): boolean {
-    if (this.loggedinUser !== null && this.loggedinUser !== "undefined" ) {
-      this.loggedinAuth === true;
-      return true;
-    } else {
-      this.loggedinAuth === false;
-      return false;
-    }
-  }
+  // public isAuth(): boolean {
+  //   this.loggedinAuth = localStorage.getItem('isAuthenticated');
+  //   this.loggedinUser  = localStorage.getItem('username');
+  //   if (this.loggedinUser !== null && this.loggedinUser !== "undefined" ) {
+  //     this.loggedinAuth === true;
+  //     return true;
+  //   } else {
+  //     this.loggedinAuth === false;
+  //     return false;
+  //   }
+  // }
 
-logout(){
-  localStorage.removeItem('username');
-  localStorage.removeItem('isAuthenticated');
-  this.router.navigate(['login']);
-}
+// logout(){
+//   localStorage.removeItem('username');
+//   localStorage.removeItem('isAuthenticated');
+//   this.router.navigate(['login']);
+// }
 
 }
 

@@ -42,9 +42,6 @@ title=true;
 
   loadMovie(){
     this.id = +this.activatedRoute.snapshot.paramMap.get('id')!;
-    // console.log(this.id);
-    // console.log(typeof(this.id));
-    // this.loadMovie();
     this.movieSub$ = this.movieService.movie(this.id).subscribe(movie => {
       this.movie = movie})
 
@@ -59,24 +56,6 @@ title=true;
   }
 
 
-  // moreDetails(){
-  //   if(this.exist === false) {
-  //     this.msg = 'Does not works!';
-  //     console.log(this.msg);
-  //     return false
-  //   } else{
- 
-  //     return true;
-  //   }
-  // }
 
-
-  // if (this.user === true) {
-  //     this.router.navigate(['home']);
-  //     console.log('Login Successful');
-  //   } else {
-  //     console.log('Loggin not Successful');
-  //     this.msg = 'Incorrect email or password';
-  //   }
 
 }
