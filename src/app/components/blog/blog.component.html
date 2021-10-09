@@ -1,79 +1,101 @@
-<div class="card" style="width: 50rem">
+<div class="container">
   <img
     class="card-img-top"
     src="https://static.wixstatic.com/media/f9f0f2_05a52c191ed8451c8ef0aadf07a5ed7c~mv2.jpg"
     alt="Card image cap"
   />
-</div>
 
-<div>
-  <h1>Atlantic Crossing, serialul istoric ce ne prezintă o romanță secretă</h1>
-  <h3>Posted on septembrie 4, 2021</h3>
-  <h2>
-    <p>
-      Daca esti in cautarea unei fresce istorice superbe de origine norvegiana,
-      Atlantic Crossing este serialul care trebuie neaparat sa fie descoperit.
-      Ne prezinta tumultuoasa poveste dintre presedintele American Franklin
-      Roosevelt si Printesa Märtha din timpul celui de-al doilea razboi Mondial.
-    </p>
-    <p>
-      In turmentatul razboi Mondial cu numarul 2, printesa norvegiana in exil,
-      Printesa Märtha este cea care transcende obligatiile sale de printesa si
-      de mama pentru a deveni o figura influenta a politicii mondiale, facand
-      tot ceea ce ii sta in putinta pentru a influenta decizia presedintelui
-      Roosvelt de a intra in razboi si de a-i pune capat.
-    </p>
-    <p>
-      La Festivalul CanneSeries din 2020, dupa noua ani de lucru, realizatorul
-      Alexander Eik poate arata in sfarsit rezultatul muncii sale si al
-      eforturilor sale. Povestea care sta la baza Atlantic Crossing nu prea este
-      cunoscuta in istorie. Este vorba despre eforturile facute de printesa
-      norvegiana pentru a convinge Statele Unite sa intre in razboi.
-    </p>
-    <p>
-      Pentru a interpreta acest duo emblematic, aceste figuri istorice
-      importante, cei care au realizat acest serial au optat pentru actori
-      obisnuiti cu micul ecran. Este vorba despre Kyle MacLachlan care este
-      cunoscut pentru rolul sau cult, agentul FBI Dale Cooper in Twin Peeaks.
-      Alaturi de el o regasim pe comediana de origine suedeza Sofia Helin care a
-      mai putut sa fie vazuta si in The Bridge, unde a fost pur si simplu
-      fabuloasa.
-    </p>
-    <p>
-      Atlantic Crossing este un serial destul de special, deoarece are cel mai
-      ridicat budget alocat pan acum pentru un serial de origine scandinava. Ne
-      propune deci un veritabil spectacol mai ales atunci cand ne prezinta
-      scenele de razboi care sunt cu adevarat impresionante.
-    </p>
-    <p>
-      O romanta trepidanta, un spectacol ametitor si o felie de istorie inca
-      necunoscuta, sunt ingredientele acestei superbe povesti. O reusita
-      minunata care te va convinge si pe tine, cu siguranta!
-    </p>
-  </h2>
-</div>
+  <div>
+    <h1>
+      Atlantic Crossing, serialul istoric ce ne prezintă o romanță secretă
+    </h1>
+    <h3>Posted on septembrie 4, 2021</h3>
+    <h2>
+      <p>
+        Daca esti in cautarea unei fresce istorice superbe de origine
+        norvegiana, Atlantic Crossing este serialul care trebuie neaparat sa fie
+        descoperit. Ne prezinta tumultuoasa poveste dintre presedintele American
+        Franklin Roosevelt si Printesa Märtha din timpul celui de-al doilea
+        razboi Mondial. In turmentatul razboi Mondial cu numarul 2, printesa
+        norvegiana in exil, Printesa Märtha este cea care transcende obligatiile
+        sale de printesa si de mama pentru a deveni o figura influenta a
+        politicii mondiale, facand tot ceea ce ii sta in putinta pentru a
+        influenta decizia presedintelui Roosvelt de a intra in razboi si de a-i
+        pune capat.
+      </p>
+      <p>
+        La Festivalul CanneSeries din 2020, dupa noua ani de lucru, realizatorul
+        Alexander Eik poate arata in sfarsit rezultatul muncii sale si al
+        eforturilor sale. Povestea care sta la baza Atlantic Crossing nu prea
+        este cunoscuta in istorie. Este vorba despre eforturile facute de
+        printesa norvegiana pentru a convinge Statele Unite sa intre in razboi.
+      </p>
+      <p>
+        Pentru a interpreta acest duo emblematic, aceste figuri istorice
+        importante, cei care au realizat acest serial au optat pentru actori
+        obisnuiti cu micul ecran. Este vorba despre Kyle MacLachlan care este
+        cunoscut pentru rolul sau cult, agentul FBI Dale Cooper in Twin Peeaks.
+        Alaturi de el o regasim pe comediana de origine suedeza Sofia Helin care
+        a mai putut sa fie vazuta si in The Bridge, unde a fost pur si simplu
+        fabuloasa. Atlantic Crossing este un serial destul de special, deoarece
+        are cel mai ridicat budget alocat pan acum pentru un serial de origine
+        scandinava. Ne propune deci un veritabil spectacol mai ales atunci cand
+        ne prezinta scenele de razboi care sunt cu adevarat impresionante.
+      </p>
+      <p>
+        O romanta trepidanta, un spectacol ametitor si o felie de istorie inca
+        necunoscuta, sunt ingredientele acestei superbe povesti. O reusita
+        minunata care te va convinge si pe tine, cu siguranta!
+      </p>
+    </h2>
+  </div>
 
-
-
-<div class="card">
-<div class="card-body">
-   <form>
-     <div class="form-group">
-       <label for="text">Title</label>
-     <input type="text" name="title" class="form-control" placeholder="Add title" #title>
-     </div>
-     <div class="form-group">
-      <label for="content">Content</label>
-      <textarea type="text" name="content" class="form-control" placeholder="Add content" cols="50" rows="5" #content></textarea>     
- 
+  <div class="post">
+    <div class="card" *ngFor="let blog of blogs">
+      <div class="card-header">
+        {{ blog.name }}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ blog.content }}</p>
+      </div>
     </div>
-<button type="button" (click)="addBlog(title, content)" class="btn btn-primary">Submit</button>
-   </form>
+  </div>
+
+  <div class="let-a-message">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="text">Name</label>
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Add name"
+              #name
+            />
+          </div>
+          <div class="form-group">
+            <label for="content">Content</label>
+            <textarea
+              type="text"
+              name="content"
+              class="form-control"
+              placeholder="Add content"
+              cols="50"
+              rows="5"
+              #content
+            ></textarea>
+          </div>
+          <button
+            type="button"
+            (click)="addBlog(name, content)"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-
-
-
-
-
-

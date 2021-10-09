@@ -8,33 +8,28 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent implements OnInit {
-
-
+  blogs: any;
 
   constructor(private titleService: Title) {
     this.titleService.setTitle('Movies App - Blog');
   }
 
   ngOnInit(): void {
-
+    let blogList = localStorage.getItem('blogs');
+    if (blogList) {
+      this.blogs = JSON.parse(blogList);
+    }
   }
 
-  addBlog(title: any, content: any) {
+  addBlog(name: any, content: any) {
     let blog = {
-      title: title.value,
+      name: name.value,
       content: content.value,
     };
 
-    let blogList = localStorage.getItem('blogs');
-    let blogs = [];
+    this.blogs.push(blog);
+    localStorage.setItem('blogs', JSON.stringify(this.blogs));
 
-    if (blogList) {
-      blogs = JSON.parse(blogList);
-    }
-
-    blogs.push(blog);
-    localStorage.setItem('blogs', JSON.stringify(blogs));
-
-    console.log(title.value, content.value);
+    console.log(blog.name, blog.content);
   }
 }
