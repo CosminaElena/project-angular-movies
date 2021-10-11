@@ -58,6 +58,9 @@
       <div class="card-body">
         <p class="card-text">{{ blog.content }}</p>
       </div>
+      <div class="card-body">
+        <p class="card-text">{{ blog.image }}</p>
+      </div>
     </div>
   </div>
 
@@ -87,9 +90,27 @@
               #content
             ></textarea>
           </div>
+
+          <div class="form-group">
+            <label for="text">Image</label>
+            <input
+              type="text" 
+              name="image"
+              class="form-control"
+              width="48" 
+              height="48"
+           
+              placeholder="Add img source"
+              #image
+            />
+
+
+
+          </div>
+
           <button
             type="button"
-            (click)="addBlog(name, content)"
+            (click)="addBlog(name, content, image)"
             class="btn btn-primary"
           >
             Submit

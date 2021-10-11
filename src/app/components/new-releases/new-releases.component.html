@@ -1,2 +1,39 @@
-<p>new-releases works!</p>
-<!-- <app-navbar></app-navbar> -->
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>Infinite</h3>
+      <p>
+        Un bărbat descoperă că halucinațiile sale sunt de fapt viziuni din
+        viețile trecute.
+      </p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random second slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>Marvel - Black Window</h3>
+      <p>
+        Filmul ne oferă o evadare din realitate și șansa de a parcurge alaturi
+        de supererou o misiune care face trimitere la originile intunecate.
+      </p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>Wrath of man</h3>
+      <p>
+        Intriga îl urmărește pe H, un personaj rece și misterios care lucrează
+        la o companie de camioane de numerar responsabilă cu mișcarea de sute de
+        milioane de dolari în jurul Los Angeles în fiecare săptămână.
+      </p>
+    </div>
+  </ng-template>
+</ngb-carousel>

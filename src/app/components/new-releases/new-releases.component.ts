@@ -16,5 +16,7 @@ export class NewReleasesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  images = ['../../assets/img1.jpeg','../../assets/img2.jpeg','../../assets/img3.jpeg'];
+
 
 }
