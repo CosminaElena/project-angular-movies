@@ -9,7 +9,7 @@
     <h1>
       Atlantic Crossing, serialul istoric ce ne prezintă o romanță secretă
     </h1>
-    <h3>Posted on septembrie 4, 2021</h3>
+    <h3>Sept 4, 2021</h3>
     <h2>
       <p>
         Daca esti in cautarea unei fresce istorice superbe de origine
@@ -54,12 +54,14 @@
     <div class="card" *ngFor="let blog of blogs">
       <div class="card-header">
         {{ blog.title }}
-        <samp style="float: right;" (click)="removeBlog(blog)">X</samp>
+        <br />
+        <small>{{ dateTime | date }}</small>
+        <samp style="float: right" (click)="removeBlog(blog)">X</samp>
       </div>
       <div class="card-body">
         <p class="card-text">{{ blog.content }}</p>
       </div>
-      <img class="image-src" [src]="blog.image"/>
+      <img class="image-src" [src]="blog.image" />
     </div>
 
     <div class="let-a-message">
@@ -113,4 +115,13 @@
       </div>
     </div>
   </div>
+  <button
+    ngxScrollTop
+    [ngxScrollTopMode]="'smart'"
+    class="my-custom-style"
+    color="primary"
+    mat-mini-fab
+  >
+    top
+  </button>
 </div>

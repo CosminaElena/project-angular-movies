@@ -28,16 +28,17 @@
     "alertify": "^0.3.0",
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.5.0",
+    "firebase": "^9.1.0",
     "jquery": "^3.6.0",
     "ngx-bootstrap": "^7.1.0",
+    "ngx-scrolltop": "^2.4.0",
     "ngx-show-hide-password": "^2.3.0",
     "popper.js": "^1.16.1",
+    "rxfire": "^6.0.0",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",
     "tslib": "^2.2.0",
-    "zone.js": "~0.11.4",
-    "firebase": "^9.1.0",
-    "rxfire": "^6.0.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.1.3",

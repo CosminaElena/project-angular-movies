@@ -32,6 +32,7 @@ p {
 
 .post {
   padding: 20px 0px;
+  overflow: scroll !important;
 }
 
 .card {
@@ -43,4 +44,14 @@ p {
   width: 160px;
   margin-left: 20px;
   margin-block-end: 20px;
+}
+
+.navbar-brand {
+  margin: none;
+  padding: 0;
+}
+.my-custom-style {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }

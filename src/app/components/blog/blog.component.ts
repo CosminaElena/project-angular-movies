@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -13,10 +13,12 @@ export class BlogComponent implements OnInit {
     this.titleService.setTitle('Movies App - Blog');
   }
 
+  dateTime!: Date;
   ngOnInit(): void {
     let blogList = localStorage.getItem('blogs');
     if (blogList) {
       this.blogs = JSON.parse(blogList);
+      this.dateTime = new Date();
     }
   }
 

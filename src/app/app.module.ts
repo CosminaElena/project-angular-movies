@@ -23,6 +23,7 @@ import {
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { MoviesModule } from './movies.module'
 import { AuthGuard } from './guards/auth.guard';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 
 
@@ -38,6 +39,7 @@ import { AuthGuard } from './guards/auth.guard';
   ],
   imports: [
     BrowserModule,
+    NgxScrollTopModule,
     HttpClientModule,
     NgbModule,
     NgbPaginationModule,
@@ -47,7 +49,8 @@ import { AuthGuard } from './guards/auth.guard';
     ReactiveFormsModule,
     ShowHidePasswordModule,
     RoutingModule,
-    MoviesModule,
+    MoviesModule
+  
 
   ],
   bootstrap: [AppComponent],
