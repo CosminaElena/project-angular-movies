@@ -25,6 +25,7 @@ import { MoviesModule } from './movies.module'
 import { AuthGuard } from './guards/auth.guard';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { AuthGuard } from './guards/auth.guard';
     ReactiveFormsModule,
     ShowHidePasswordModule,
     RoutingModule,
-    MoviesModule
+    MoviesModule,
+
   ],
   bootstrap: [AppComponent],
   exports: [],
