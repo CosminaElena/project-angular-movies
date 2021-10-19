@@ -8,12 +8,13 @@ import { Title } from '@angular/platform-browser';
 })
 export class BlogComponent implements OnInit {
   blogs: any = [];
-  date! : Date
+  date!: Date;
+
+  rate!: any;
   constructor(private titleService: Title) {
     this.titleService.setTitle('Movies App - Blog');
   }
 
-  
   ngOnInit(): void {
     let blogList = localStorage.getItem('blogs');
     if (blogList) {
@@ -21,26 +22,26 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  
-  addBlog(title: any, content: any, image: any,  date : Date) {
-    var postDate = new Date();
+  addBlog(title: any, content: any, image: any, date: Date, rate: any) {
+    let postDate = new Date();
+    let currentRate = 7;
     let blog = {
       title: title.value,
       content: content.value,
       image: image.value,
-      date: postDate
-     
+      date: postDate,
+      rate: currentRate,
     };
     this.blogs.push(blog);
     localStorage.setItem('blogs', JSON.stringify(this.blogs));
-    console.log(blog.title, blog.content, blog.image, blog.date);
+    console.log(blog.title, blog.content, blog.image, blog.date, blog.rate);
   }
 
   removeBlog(blog: any) {
     let index = this.blogs.indexOf(blog);
     this.blogs.splice(index, 1);
     localStorage.setItem('blogs', JSON.stringify(this.blogs));
-  
+
     // alert('blog has been deleted');
   }
 }

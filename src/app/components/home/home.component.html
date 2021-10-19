@@ -1,19 +1,105 @@
-<!-- <app-navbar></app-navbar> -->
-<main class="container">
-  <br />
-  <h1>Home page</h1>
-  <br />
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, veniam.
-    Dignissimos, mollitia incidunt, esse non itaque tenetur minima, saepe nobis
-    obcaecati rerum aperiam tempore laboriosam. Sit ad quasi deserunt voluptas.
-  </p>
+<img
+  src="https://static.wixstatic.com/media/f9f0f2_c09326b7c6324f7d93fdabb8cfbde900~mv2.jpg/v1/fill/w_980,h_203,al_c,q_90/f9f0f2_c09326b7c6324f7d93fdabb8cfbde900~mv2.webp"
+  class="img-fluid"
+  alt="Responsive image"
+/>
+<div class="centered">
+  <h1 class="bottom-right">Home</h1>
+</div>
 
-  <img
-    src="https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg"
-    class="img-fluid"
-    alt="Responsive image"
-    max-width="100%"
-  />
-</main>
+<hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
 
+<h1>Categories</h1>
+
+<ngb-carousel class="category">
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card-body">
+          <img
+            src="https://cdn.mos.cms.futurecdn.net/eWrP8oLwn53pBYgUTQXZ6K.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="centered">
+            <h5 class="card-title">Action</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card-body">
+          <img
+            src="https://www.mediascrolls.com/wp-content/uploads/2021/10/Venom-Let-There-Be-Carnage-2.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="centered">
+            <h5 class="card-title">Thriller</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-caption"></div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card-body">
+          <img
+            src="https://dx35vtwkllhj9.cloudfront.net/universalstudios/the-addams-family-2/images/regions/ca/header.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="centered">
+            <h5 class="card-title">Comedy</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card-body">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNT0JHVqVsKx-18QC7Q9yXGvzmcFVQhXCEoKHLBArszverGnSZZp17WY2qSO4v6cuz3lQ&usqp=CAU"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="centered">
+            <h5 class="card-title">Romance</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-caption"></div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card-body">
+          <img
+            src="https://1.bp.blogspot.com/-7s8pfJHT9pQ/YN1amfGF4mI/AAAAAAAAQF8/Lt9voKQmM_YIFUoGp6P8QHfxCL2kK3piQCNcBGAsYHQ/s550/Dont%2BBreathe%2BOfficial%2BTrailer.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="centered">
+            <h5 class="card-title">Crime</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card-body">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtV_h8GQ0FFW19vvl-Lp1yZUD7UGmWdnnxMjah07CllIxcuir9QQgLX6xFdS4nAtZ4NYQ&usqp=CAU"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="centered">
+            <h5 class="card-title">Family</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-caption"></div>
+  </ng-template>
+</ngb-carousel>
+
+<hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />

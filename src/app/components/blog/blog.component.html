@@ -50,18 +50,26 @@
     </h2>
   </div>
 
+  <hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
+  <h1>New post</h1>
+
   <div class="post">
     <div class="card" *ngFor="let blog of blogs">
       <div class="card-header">
         {{ blog.title }}
         <br />
-        <small>{{ blog.date | date: 'dd.MM.yyyy  HH:mm' }}</small>
+        <small>{{ blog.date | date: "dd.MM.yyyy  HH:mm" }}</small>
         <samp style="float: right" (click)="removeBlog(blog)">X</samp>
       </div>
       <div class="card-body">
         <p class="card-text">{{ blog.content }}</p>
       </div>
       <img class="image-src" [src]="blog.image" />
+
+      <hr />
+      <div class="rate">
+        Rate: <ngb-rating>{{ blog.rate }}</ngb-rating>
+      </div>
     </div>
 
     <div class="let-a-message">
@@ -105,7 +113,7 @@
 
             <button
               type="button"
-              (click)="addBlog(title, content, image, date)"
+              (click)="addBlog(title, content, image, date, rate)"
               class="btn btn-primary"
             >
               Submit
@@ -116,10 +124,11 @@
     </div>
   </div>
   <ngx-scrolltop
-  [backgroundColor]="'#d2d2d2'"
-  [symbolColor]="'#fafafa'"
-  [size]="40"
-  [mode]="'classic'"
-  position="right">
-</ngx-scrolltop>
+    [backgroundColor]="'#d2d2d2'"
+    [symbolColor]="'#fafafa'"
+    [size]="40"
+    [mode]="'classic'"
+    position="right"
+  >
+  </ngx-scrolltop>
 </div>

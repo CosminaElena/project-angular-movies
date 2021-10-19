@@ -8,6 +8,8 @@ import {Title} from '@angular/platform-browser';
 })
 export class NewReleasesComponent implements OnInit {
 
+  public isCollapsed = false;
+
   constructor(
     private titleService: Title
     ) {  
@@ -18,5 +20,6 @@ export class NewReleasesComponent implements OnInit {
   }
   images = ['../../assets/img1.jpeg','../../assets/img2.jpeg','../../assets/img3.jpeg'];
 
+  
 
 }

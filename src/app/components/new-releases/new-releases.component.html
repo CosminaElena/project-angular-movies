@@ -37,3 +37,148 @@
     </div>
   </ng-template>
 </ngb-carousel>
+
+<hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
+
+<h1>Premiers</h1>
+<br />
+<p>
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    (click)="collapse.toggle()"
+    [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample"
+  >
+    Fresh top 10
+  </button>
+</p>
+<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Premiere</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Free Guy</td>
+            <td>Comedy, Action, SF</td>
+            <td>11.08.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Queenpins</td>
+            <td>Comedy</td>
+            <td>10.09.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Falling for Figaro</td>
+            <td>Comedy, Romance</td>
+            <td>01.10.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>The French Dispatch</td>
+            <td>Drama</td>
+            <td>16.10.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Hotel Transylvania: Transformania</td>
+            <td>Comedy, Animation</td>
+            <td>22.10.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Jackass 4</td>
+            <td>Comedy, Action</td>
+            <td>22.10.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Ghostbusters: Afterlife</td>
+            <td>Comedy</td>
+            <td>12.11.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>West Side Story</td>
+            <td>Drama, Musical</td>
+            <td>10.12.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>Spider-Man: No Way Home</td>
+            <td>Action, SF</td>
+            <td>17.12.2021</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>The King’s Man</td>
+            <td>Comedy, Action</td>
+            <td>24.12.2021</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
+
+<h1>News</h1>
+
+<div class="warpper">
+  <input class="radio" id="one" name="group" type="radio" checked />
+  <input class="radio" id="two" name="group" type="radio" />
+  <input class="radio" id="three" name="group" type="radio" />
+  <div class="tabs">
+    <label class="tab" id="one-tab" for="one">Start Up</label>
+    <label class="tab" id="two-tab" for="two">Cinema</label>
+    <label class="tab" id="three-tab" for="three">TV Series</label>
+  </div>
+  <div class="panels">
+    <div class="panel" id="one-panel">
+      <div class="panel-title">Lansare</div>
+      <p>
+        Ron's Gone Wrong/Ron o ia razna, primul film de animație produs de
+        Locksmith, în Londra, în plină pandemie, analizează conceptul de
+        prietenie și relația plină de imprevizibil dintre un elev neintegrat și
+        un robot cu un defect de producție.
+      </p>
+    </div>
+    <div class="panel" id="two-panel">
+      <div class="panel-title">Stiri</div>
+      <p>
+        Următorul film Spider-Man iese în decembrie și s-ar putea să fie ultimul
+        pentru mult timp, cel puțin așa declară Tom Holland. „Cu toții priveam
+        No Way Home ca pe finalul unei serii de filme, ca să zicem așa”, declară
+        Holland pentru Entertainment Weekly. „Chiar dacă am fi fost destul de
+        norocoși să mai plonjăm încă o dată în lumea acestor personaje, ceea ce
+        ați vedea ar fi ceva foarte diferit. Nu ar mai fi aceeași trilogie. Am
+        folosi tot timpul necesar și am construi ceva diferit, am schimba tonul
+        filmelor. Dacă este sau nu cazul, nu știu. Dar, cu siguranță, am tratat
+        No Way Home ca pe un final de serie de filme” .
+      </p>
+    </div>
+    <div class="panel" id="three-panel">
+      <div class="panel-title">Finalul serialului Paris Police 1900</div>
+      <p>
+        Focus Sat TV va difuza ultimele două episoade ale serialului Paris
+        Police 1900, în această seară, de la ora 22:00 și va continua seria de
+        producții Canal+ Création Originale cu titlul Moscow Noir începând de
+        joi, 21 octombrie, ora 21:30.
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr style="height: 1px; border-width: 0; color: gray; background-color: gray" />
