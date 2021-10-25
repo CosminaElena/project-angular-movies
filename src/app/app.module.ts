@@ -24,7 +24,11 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { MoviesModule } from './movies.module'
 import { AuthGuard } from './guards/auth.guard';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
+ 
 
 
 @NgModule({
@@ -49,7 +53,14 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     ReactiveFormsModule,
     ShowHidePasswordModule,
     RoutingModule,
-    MoviesModule
+    MoviesModule,
+    BrowserAnimationsModule,
+   
+
+
+
+   
+
   
 
   ],

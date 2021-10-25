@@ -5,6 +5,8 @@ import { MovieModel, movies } from 'src/app/models/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
 import { MovieDetails } from '../movie-details/movie-details.movie';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Movies } from 'src/app/models/movie.model';
 
 @Component({
   selector: 'app-watch-list',
@@ -12,37 +14,30 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./watch-list.movie.css'],
 })
 export class WatchList implements OnInit {
-  [x: string]: any;
+  searchMovies: Movies;
 
-  id!: number;
-  movie!: MovieModel | undefined;
-  movieSub$!: Subscription;
-  list: WatchList | undefined
-
-  movies$!: Observable<MovieModel[]>;
-  constructor(private titleService: Title,
-              private movieService: MovieService,
-              private router: Router,
-              private activatedRoute: ActivatedRoute) {
-
+  constructor(
+    private titleService: Title,
+    private movieService: MovieService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {
     this.titleService.setTitle('Movies App - Watch-list');
   }
 
-
-
   ngOnInit(): void {
-    this.movies$ = this.movieService.getMovies();
+    this.movieService.getMovies().subscribe(
+      (data) => {
+        this.searchMovies = data;
+        console.log(this.searchMovies);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
-
-  navigateToDetails(id: number){
-    this.router.navigate(['/movie/movie-details/' + id]);
-
-   } 
-
-
-
-
-
-
+  navigateToDetails(movieId: number) {
+    this.router.navigate(['/movie/movie-details/' + movieId]);
+  }
 }

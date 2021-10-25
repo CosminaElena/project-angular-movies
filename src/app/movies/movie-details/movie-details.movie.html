@@ -1,13 +1,28 @@
-<div *ngIf="this.movie === undefined then ifBlock else elseBlock"></div>
+<h1>Movie details</h1>
 
-<ng-template #ifBlock>
-  <h1>Doesn't works!</h1>
-</ng-template>
-<ng-template #elseBlock>
-  <div>
-    <img src="{{movie?.image}}" />
-    <h1>{{movie?.name}} - {{movie?.year}}</h1>
-    <h2>{{movie?.genre}} - {{movie?.rating}}</h2>
-    <h2>{{movie?.description}}</h2>
+<div class="card">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        class="card-img-top"
+        alt="Movie img"
+        width="300"
+        height="400"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{movie?.title}}</h5>
+        <p class="card-text">{{movie?.overview}}</p>
+        <p class="card-text">
+          <small class="text-muted">{{movie?.release_date}}</small>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">{{movie?.vote_average}}</small>
+          <span class="material-icons">star_rate</span>
+        </p>
+      </div>
+    </div>
   </div>
-</ng-template>
+</div>
