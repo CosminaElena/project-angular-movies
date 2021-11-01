@@ -14,22 +14,19 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthenticationService } from './services/authentication/authentication.service';
 import {
   NgbPaginationModule,
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-import { MoviesModule } from './movies.module'
+import { MoviesModule } from './movies.module';
 import { AuthGuard } from './guards/auth.guard';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
- 
-
+import { HttpInterceptorService } from './services/http-interceptor.service';
+import { DropDownPost } from './components/dropdown-post/dropdown-post.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ArticleComponent,
     HomeComponent,
     BlogComponent,
+    DropDownPost
   ],
   imports: [
     BrowserModule,
@@ -55,14 +53,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RoutingModule,
     MoviesModule,
     BrowserAnimationsModule,
-   
-
-
-
-   
-
-  
-
+  ],
+  providers: [
+    [
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: HttpInterceptorService,
+        multi: true,
+      },
+    ],
   ],
   bootstrap: [AppComponent],
   exports: [],

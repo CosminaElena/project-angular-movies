@@ -39,7 +39,7 @@ export class MovieDetails implements OnInit {
 
     if (this.movie === undefined) {
       this.msg = 'Does not works!';
-      console.log(this.msg);
+      // console.log(this.msg);
     } else {
       console.log(this.movie);
     }

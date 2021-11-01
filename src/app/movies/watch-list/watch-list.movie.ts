@@ -15,6 +15,8 @@ import { Movies } from 'src/app/models/movie.model';
 })
 export class WatchList implements OnInit {
   searchMovies: Movies;
+  // results: any;
+
 
   constructor(
     private titleService: Title,

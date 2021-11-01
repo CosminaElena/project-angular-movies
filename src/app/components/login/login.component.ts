@@ -27,8 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.User = localStorage.getItem('username');
-    // console.log(this.user);
+
   }
 
   submit(loginForm: NgForm) {

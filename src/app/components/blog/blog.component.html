@@ -72,10 +72,22 @@
       </div>
     </div>
 
+
     <div class="let-a-message">
       <div class="card">
         <div class="card-body">
           <form>
+            <!-- <select class="form-select" aria-label="Default select example" >
+
+              <option *ngFor="let movie of dropdown.results">
+                {{movie.title}}</option>
+            </select>
+            <br> -->
+
+
+            <app-dropdown-post [movieslist] = "dropdown" (chooseEvent) = "choose($event)">
+              <!-- <p>The name of the selected movie is {{name}}</p> -->
+            </app-dropdown-post>
             <div class="form-group">
               <label for="text">Title</label>
               <input
@@ -132,3 +144,6 @@
   >
   </ngx-scrolltop>
 </div>
+
+
+

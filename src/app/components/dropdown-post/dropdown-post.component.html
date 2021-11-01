@@ -1,0 +1,9 @@
+<select class="form-select" aria-label="Default select example" [(ngModel)] = "movieSelected">
+  <option selected>Movies List</option>
+  <option *ngFor="let movie of movieslist.results">{{movie.title}}</option>
+</select>
+<!-- [(ngModel)] = "movieSelected" -->
+
+<button type="button" class="btn btn-primary" (click)="callParentChoose()">Choose</button>
+<p> The name of the selected movie is {{movieSelected}}</p>
+
